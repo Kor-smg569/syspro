@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
         return 2;
     }
 
-    fp2 = fopen(argv[2], "at"); // Open in append mode to preserve existing content
+    fp2 = fopen(argv[2], "at");
     if (fp2 == NULL) {
         fprintf(stderr, "File %s Open Error\n", argv[2]);
         fclose(fp1);
@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
     while ((c = fgetc(fp1)) != EOF) {
         if (fputc(c, fp2) == EOF) {
             fprintf(stderr, "Error writing to %s\n", argv[2]);
-            break; // Exit the loop in case of a write error
+            break;
         }
     }
 	fclose(fp2);
